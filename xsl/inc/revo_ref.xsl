@@ -222,8 +222,8 @@ transformdosiero, ekz. revohtml.xsl
   ekz/refgrp/ref|
   klr/ref|
   klr/refgrp/ref">
-
-  <xsl:variable name="file" select="substring-before(@cel,'.')"/>
+  <xsl:apply-templates/>
+  <!-- <xsl:variable name="file" select="substring-before(@cel,'.')"/>
   <xsl:choose>
     <xsl:when test="$file">
       <a class="{local-name((ancestor::rim|ancestor::ekz|ancestor::dif)[last()])}" 
@@ -236,7 +236,7 @@ transformdosiero, ekz. revohtml.xsl
       <xsl:apply-templates/>
       </a>
     </xsl:otherwise>
-  </xsl:choose>
+  </xsl:choose> -->
 </xsl:template>
 
 

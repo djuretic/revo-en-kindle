@@ -12,6 +12,9 @@ uzata kun XSLT1-transformilo
 
 <xsl:template match="/">
   <html xmlns:idx="www.mobipocket.com" xmlns:mbp="www.mobipocket.com" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+      <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    </head>
     <body>
       <mbp:pagebreak/>
       <mbp:frameset>

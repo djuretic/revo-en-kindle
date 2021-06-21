@@ -18,7 +18,7 @@ reguloj por la prezentado de la fontindikoj
   </xsl:variable>
 
   <!-- la fontindiko kun ligo al la referenco malsupre de la pagxo -->
-  <span class="fntref" id="ekz_{$n}">
+  <!-- <span class="fntref" id="ekz_{$n}">
     <xsl:text>[</xsl:text>
     <a class="{local-name((
                  ancestor::rim|
@@ -28,7 +28,7 @@ reguloj por la prezentado de la fontindikoj
        href="#fnt_{$n}" title="vidu la fonton"><xsl:value-of select="$n"/>
     </a>
     <xsl:text>]</xsl:text>
-  </span>
+  </span> -->
 </xsl:template>
 
 <!--
@@ -64,7 +64,7 @@ la fontoreferencoj malsupre de la derivaĵoj
   <!-- se enestas strukturitaj fontoj, prezentu ilin en propra alineo -->
   <xsl:if test=".//fnt[bib|aut|vrk|lok]"> 
     <div class="fontoj kasxita">
-      <xsl:apply-templates select=".//fnt[aut|vrk|lok]" mode="fontoj"/>
+      <!-- <xsl:apply-templates select=".//fnt[aut|vrk|lok]" mode="fontoj"/> -->
       <!--
       <p>
         <xsl:call-template name="mankoj"/>
