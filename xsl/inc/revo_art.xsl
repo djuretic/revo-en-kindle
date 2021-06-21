@@ -1,4 +1,4 @@
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:idx="www.mobipocket.com"
 		version="1.0">
 
 <!-- (c) 1999-2020 ĉe Wolfram Diestel  laŭ GPLv2
@@ -11,30 +11,18 @@ uzata kun XSLT1-transformilo
 <!-- kruda artikolstrukturo -->
 
 <xsl:template match="/">
-  <html lang="eo">
-    <head>
-      <meta charset="utf-8"/>
-      <meta name="viewport" content="width=device-width,initial-scale=1"/>
-      <xsl:if test="//frm[@am]">
-        <script type="text/javascript" async="async" src="{$mathjax-url}"></script>
-      </xsl:if>
-      <xsl:if test="$aspekto='ilustrite'">
-      	<link title="artikolo-stilo" type="text/css" rel="stylesheet" href="{$cssdir}/{$art-css}" />
-      </xsl:if>
-      <title><xsl:apply-templates select="//art/kap[1]" mode="titolo"/></title>
-      <script type="text/javascript">
-	<xsl:text>&lt;!--
-	top.document.title = 'Reta Vortaro [</xsl:text>
-	<xsl:value-of select="normalize-space(//art/kap[1])"/>
-	<xsl:text>]';
-	</xsl:text>
-	<xsl:text>//--&gt;</xsl:text>
-      </script>
-      <script src="{$jscdir}/{$art-jsc}"></script> 
-     
-    </head>
+  <html xmlns:idx="www.mobipocket.com" xmlns:mbp="www.mobipocket.com" xmlns:xlink="http://www.w3.org/1999/xlink">
     <body>
-      <xsl:apply-templates/>
+      <mbp:pagebreak/>
+      <mbp:frameset>
+        <mbp:slave-frame display="bottom" device="all" breadth="auto" leftmargin="0" rightmargin="0" bottommargin="0" topmargin="0">
+          <div align="center" bgcolor="yellow">
+            <a onclick="index_search()">Dictionary Search</a>
+          </div>
+        </mbp:slave-frame>
+        <mbp:pagebreak/>
+        <xsl:apply-templates/>
+      </mbp:frameset>
     </body>
   </html>
 </xsl:template>
@@ -152,6 +140,7 @@ uzata kun XSLT1-transformilo
 
 <xsl:template match="drv">
   <!-- xsl:apply-templates select="tez" mode="ref"/ -->
+  <idx:entry name="word" scriptable="yes">
   <section class="drv">
     <xsl:apply-templates select="kap"/>
     <div class="kasxebla">
@@ -179,6 +168,7 @@ uzata kun XSLT1-transformilo
       <xsl:call-template name="tradukoj"/>
     </div> <!-- kasxebla -->
   </section>
+  </idx:entry>
 </xsl:template>  
 	
 
@@ -227,7 +217,9 @@ uzata kun XSLT1-transformilo
 
 <xsl:template match="drv/kap">
   <h2 id="{ancestor::drv/@mrk}">
-    <xsl:apply-templates/>
+    <idx:orth>
+      <xsl:attribute name="value"><xsl:apply-templates select="text()|tld"/></xsl:attribute>
+      <xsl:apply-templates/></idx:orth>
     <xsl:apply-templates select="../mlg"/>
 
     <!-- tezauroligo 
