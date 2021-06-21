@@ -50,10 +50,10 @@ reguloj por la prezentado de la fontindikoj
 </xsl:template>
 
 <xsl:template match="bib">
-   <a class="fntref" href="{$bibliogrhtml}#{.}" target="indekso"
+   <!-- <a class="fntref" href="{$bibliogrhtml}#{.}" target="indekso"
         title="al la bibliografio">
      <xsl:value-of select="."/> 
-   </a>
+   </a> -->
 </xsl:template>
 
 <!-- #######################################
