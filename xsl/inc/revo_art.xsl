@@ -171,6 +171,7 @@ uzata kun XSLT1-transformilo
       <xsl:call-template name="tradukoj"/>
     </div> <!-- kasxebla -->
   </section>
+  <hr />
   </idx:entry>
 </xsl:template>  
 	
