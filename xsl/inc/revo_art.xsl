@@ -97,10 +97,10 @@ uzata kun XSLT1-transformilo
   </article>
 
   <!-- piedlinio -->
-  <footer>
+  <!-- <footer>
     <hr />
     <xsl:call-template name="redakto"/>
-  </footer>
+  </footer> -->
 </xsl:template>
 
 

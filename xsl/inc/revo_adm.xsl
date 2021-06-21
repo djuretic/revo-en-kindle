@@ -11,14 +11,14 @@ reguloj por prezentado de la administraj notoj
 
 <xsl:template name="admin">
   <!-- xsl:if test="//adm" -->
-    <hr />
+    <!-- <hr />
     <div class="notoj">
       <h2>administraj notoj</h2>
       <div class="kasxebla">
         <xsl:apply-templates select="//adm" mode="admin"/>
         <xsl:call-template name="mankoj"/>
       </div>
-    </div>
+    </div> -->
   <!-- /xsl:if -->
 
 </xsl:template>
