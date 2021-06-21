@@ -28,10 +28,10 @@ montru tie, cxar ili estas esenca parto de tiuj -->
 
 <xsl:template name="tradukoj">
   <xsl:if test=".//trd">
-    <xsl:variable name="self" select="."/>
+    <!-- <xsl:variable name="self" select="."/>
     <section class="tradukoj">
       <dl class="tradukoj etendebla">
-        <!-- elektu por chiu lingvo unu reprezentanton -->
+        <!- elektu por chiu lingvo unu reprezentanton ->
         <xsl:for-each select="document($lingvoj_cfg)/lingvoj/lingvo">
           <xsl:sort lang="eo"/>
           <xsl:variable name="lng" select="@kodo"/>
@@ -50,7 +50,7 @@ montru tie, cxar ili estas esenca parto de tiuj -->
           </xsl:for-each>
         </xsl:for-each>
       </dl>
-    </section>
+    </section> -->
   </xsl:if>
 </xsl:template>
 
