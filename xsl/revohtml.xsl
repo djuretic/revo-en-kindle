@@ -50,7 +50,7 @@ transform-reguloj.
 
 <!-- ilustrite por HTML kun grafikoj ktp.
      simple por HTML tauga por konverto al simpla teksto -->
-<xsl:variable name="aspekto" select="'ilustrite'"/>
+<xsl:variable name="aspekto" select="'ne-ilustrite'"/>
 
 <xsl:template name="eo-kodigo">
   <xsl:param name="str"/>
