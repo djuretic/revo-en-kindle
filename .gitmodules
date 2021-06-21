@@ -1,0 +1,3 @@
+[submodule "revo-fonto"]
+	path = revo-fonto
+	url = https://github.com/revuloj/revo-fonto.git
