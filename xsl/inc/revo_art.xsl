@@ -68,7 +68,7 @@ uzata kun XSLT1-transformilo
       <!-- fontindikoj, kiuj ne troviĝas ene de drv, t.e. ekz-e en art/kap-->
       <xsl:call-template name="fontoj-art"/>
     </section>
-
+    
     <!-- prezentu tradukojn en propra alineo 
     <section class="tradukoj">
       <xsl:call-template name="tradukoj"/>
@@ -81,10 +81,9 @@ uzata kun XSLT1-transformilo
     </section -->
 
     <!-- administraj notoj -->
-    <section class="admin">
+    <!-- <section class="admin">
       <xsl:call-template name="admin"/>
-    </section>
-
+    </section> -->
   </article>
 
   <!-- piedlinio -->
@@ -171,8 +170,8 @@ uzata kun XSLT1-transformilo
       <xsl:call-template name="tradukoj"/>
     </div> <!-- kasxebla -->
   </section>
-  <hr />
   </idx:entry>
+  <hr />
 </xsl:template>  
 	
 
