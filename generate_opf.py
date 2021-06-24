@@ -5,7 +5,8 @@ def main():
         lines = f.readlines()
     
     html_dir = Path('./output')
-    html_files = html_dir.glob("*.html")
+    html_files = list(html_dir.glob("*.html"))
+    html_files.sort()
 
     n = 0
 
@@ -13,6 +14,7 @@ def main():
         for line in lines:
             if "<item id" in line:
                 for n, html in enumerate(html_files):
+                    # TODO test media-type="application/xhtml+xml"
                     f.write(f"""    <item id="dictionary{n}" href="{html.name}" media-type="text/x-oeb1-document"/>\n""")
             elif "<itemref" in line:
                 # the previous loop will set "n"
