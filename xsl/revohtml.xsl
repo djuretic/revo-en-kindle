@@ -21,7 +21,7 @@ transform-reguloj.
 <xsl:import href="inc/revo_ref.xsl"/>
 <xsl:import href="inc/revo_dif.xsl"/>
 
-<xsl:output method="html" version="4.0" encoding="utf-8"/>
+<xsl:output method="html" encoding="utf-8"/>
 <xsl:strip-space elements="trdgrp refgrp kap"/>
 
 <!-- agordo-dosieroj kies enhavo estas uzata en la XSL-reguloj -->

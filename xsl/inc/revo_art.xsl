@@ -11,23 +11,7 @@ uzata kun XSLT1-transformilo
 <!-- kruda artikolstrukturo -->
 
 <xsl:template match="/">
-  <html xmlns:idx="www.mobipocket.com" xmlns:mbp="www.mobipocket.com" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <head>
-      <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    </head>
-    <body>
-      <mbp:pagebreak/>
-      <mbp:frameset>
-        <mbp:slave-frame display="bottom" device="all" breadth="auto" leftmargin="0" rightmargin="0" bottommargin="0" topmargin="0">
-          <div align="center" bgcolor="yellow">
-            <a onclick="index_search()">Dictionary Search</a>
-          </div>
-        </mbp:slave-frame>
-        <mbp:pagebreak/>
-        <xsl:apply-templates/>
-      </mbp:frameset>
-    </body>
-  </html>
+  <xsl:apply-templates/>
 </xsl:template>
 
 <xsl:template match="art/kap" mode="titolo">
@@ -38,16 +22,16 @@ uzata kun XSLT1-transformilo
 <!-- art, subart -->
 
 <xsl:template match="art">
-  <header>
+  <!-- <header> -->
     <!-- flagoj de la tradukoj 
     <xsl:if test="$aspekto='ilustrite'">
       <xsl:call-template name="flagoj"/>
     </xsl:if>
     -->
-  </header>
+  <!-- </header> -->
 
-  <article>
-      <section id="s_artikolo" class="art">
+  <!-- <article>
+      <section id="s_artikolo" class="art"> -->
       <xsl:choose>
 
         <!-- se enestas subartikoloj aŭ rekte sencoj prezentu per dl-listo -->
@@ -67,7 +51,7 @@ uzata kun XSLT1-transformilo
 
       <!-- fontindikoj, kiuj ne troviĝas ene de drv, t.e. ekz-e en art/kap-->
       <xsl:call-template name="fontoj-art"/>
-    </section>
+    <!-- </section> -->
     
     <!-- prezentu tradukojn en propra alineo 
     <section class="tradukoj">
@@ -84,7 +68,7 @@ uzata kun XSLT1-transformilo
     <!-- <section class="admin">
       <xsl:call-template name="admin"/>
     </section> -->
-  </article>
+  <!-- </article> -->
 
   <!-- piedlinio -->
   <!-- <footer>
