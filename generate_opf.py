@@ -5,7 +5,7 @@ def main():
         lines = f.readlines()
     
     html_dir = Path('./output')
-    html_files = list(html_dir.glob("*.html"))
+    html_files = list(html_dir.glob("content*.html"))
     html_files.sort()
 
     n = 0
