@@ -205,7 +205,7 @@ uzata kun XSLT1-transformilo
 <xsl:template match="drv/kap">
   <h2 id="{ancestor::drv/@mrk}">
     <idx:orth>
-      <xsl:attribute name="value"><xsl:apply-templates select="text()|tld"/></xsl:attribute>
+      <xsl:attribute name="value"><xsl:apply-templates select="text()|tld" mode="kapvorto_id"/></xsl:attribute>
       <xsl:apply-templates/></idx:orth>
     <xsl:apply-templates select="../mlg"/>
 
@@ -352,6 +352,9 @@ uzata kun XSLT1-transformilo
   <xsl:value-of select="."/>
 </xsl:template>
 
+<xsl:template match="kap/text()" mode="kapvorto_id">
+  <xsl:value-of select="normalize-space(.)"/>
+</xsl:template>
 
 </xsl:stylesheet>
 
