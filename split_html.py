@@ -8,11 +8,6 @@ HTML_CONTENT_BEFORE = """<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transition
   <body>
     <mbp:pagebreak/>
     <mbp:frameset>
-      <mbp:slave-frame display="bottom" device="all" breadth="auto" leftmargin="0" rightmargin="0" bottommargin="0" topmargin="0">
-        <div align="center" bgcolor="yellow">
-          <a onclick="index_search()">Dictionary Search</a>
-        </div>
-      </mbp:slave-frame>
       <mbp:pagebreak/>
 """
 

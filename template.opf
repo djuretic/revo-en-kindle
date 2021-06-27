@@ -22,5 +22,5 @@
 </spine>
 
 <tours/>
-<guide> <reference type="search" title="Dictionary Search" onclick= "index_search()"/> </guide>
+<guide/>
 </package>
