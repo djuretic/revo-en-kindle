@@ -13,3 +13,9 @@ pip install -r requirements.txt
 # this will generate the .mobi file
 ./kindlegen output/vortaro.opf
 ```
+
+## Download
+
+The .mobi file can be found in the [Releases](https://github.com/djuretic/revo-en-kindle/releases) section.
+
+Then you can upload it or email it to your Kindle.
