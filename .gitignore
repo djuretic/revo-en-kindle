@@ -1,4 +1,5 @@
 *.html
 output/*.opf
 *.txt
+!requirements.txt
 *.mobi
