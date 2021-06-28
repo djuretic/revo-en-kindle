@@ -42,11 +42,11 @@ reguloj por la prezentado de la fontindikoj
 -->
 
 <xsl:template match="fnt">
-  <sup class="fntref"><xsl:apply-templates/>
+  <!-- <sup class="fntref"><xsl:apply-templates/>
     <xsl:if test="ancestor::kap or ancestor::drv or ancestor::snc">
       <xsl:text>&#x0a;</xsl:text>
     </xsl:if>
-  </sup>
+  </sup> -->
 </xsl:template>
 
 <xsl:template match="bib">
