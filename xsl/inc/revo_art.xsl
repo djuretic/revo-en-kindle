@@ -37,9 +37,9 @@ uzata kun XSLT1-transformilo
         <!-- se enestas subartikoloj aŭ rekte sencoj prezentu per dl-listo -->
         <xsl:when test="subart|snc">
           <xsl:apply-templates select="kap"/>
-          <dl>
+          <!-- <dl> -->
             <xsl:apply-templates select="node()[not(self::kap)]"/>
-          </dl>
+          <!-- </dl> -->
         </xsl:when>
 
         <!-- prezentu la derivaĵojn ktp. -->
@@ -81,44 +81,46 @@ uzata kun XSLT1-transformilo
 <!-- subartikolo -->
 
 <xsl:template match="subart">
-  <dt class="subart">
-    <xsl:if test="@mrk">
-      <xsl:attribute name="id">
-        <xsl:value-of select="@mrk"/>
-      </xsl:attribute>
-    </xsl:if>
-    <xsl:number format="I."/>
-  </dt>
-  <dd>
-    <section class="subart">
-      <div>
-        <xsl:choose>
+  <div>
+    <span class="subart">
+      <xsl:if test="@mrk">
+        <xsl:attribute name="id">
+          <xsl:value-of select="@mrk"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:number format="I."/>
+    </span>
+    <span>
+      <section class="subart">
+        <div>
+          <xsl:choose>
 
-          <xsl:when test="snc">
-            <xsl:apply-templates select="kap"/>
-            <div class="subart-enh">
-              <dl>
-                <xsl:apply-templates select="node()[not(self::kap)]"/>
-              </dl>
-              <xsl:call-template name="fontoj"/>
-            </div>
-          </xsl:when>
+            <xsl:when test="snc">
+              <xsl:apply-templates select="kap"/>
+              <div class="subart-enh">
+                <!-- <dl> -->
+                  <xsl:apply-templates select="node()[not(self::kap)]"/>
+                <!-- </dl> -->
+                <xsl:call-template name="fontoj"/>
+              </div>
+            </xsl:when>
 
-          <xsl:otherwise>
-            <xsl:apply-templates/>
-          </xsl:otherwise>
+            <xsl:otherwise>
+              <xsl:apply-templates/>
+            </xsl:otherwise>
 
-        </xsl:choose>
+          </xsl:choose>
 
-        <!-- KONTROLU: eble tio ne estas tute ĝusta, ĉar se aperas kaj drv/trd(grp) kaj subart/trd(grp)
-            ni eble duobligus ilin tiel. Do tiuokaze eble ni havu duan transformregulon
-            tradukoj-subart, kiu traktas nur ĉi-lastajn -->
-        <xsl:if test="trd|trdgrp|snc/trd|snc/trdgrp">
-          <xsl:call-template name="tradukoj"/>
-        </xsl:if>
-      </div>
-    </section>
-  </dd>
+          <!-- KONTROLU: eble tio ne estas tute ĝusta, ĉar se aperas kaj drv/trd(grp) kaj subart/trd(grp)
+              ni eble duobligus ilin tiel. Do tiuokaze eble ni havu duan transformregulon
+              tradukoj-subart, kiu traktas nur ĉi-lastajn -->
+          <xsl:if test="trd|trdgrp|snc/trd|snc/trdgrp">
+            <xsl:call-template name="tradukoj"/>
+          </xsl:if>
+        </div>
+      </section>
+    </span>
+  </div>
 </xsl:template> 
 
 
@@ -132,9 +134,9 @@ uzata kun XSLT1-transformilo
     <div class="kasxebla">
       <div class="drv-enh">
         <xsl:apply-templates select="gra|uzo|fnt|dif|ref[@tip='dif']"/>
-        <dl>
+        <!-- <dl> -->
           <xsl:apply-templates select="subdrv|snc"/>
-        </dl>  
+        <!-- </dl>   -->
         <xsl:apply-templates
           select="node()[
             not(
@@ -162,7 +164,7 @@ uzata kun XSLT1-transformilo
 <!-- subderivajho -->
 
 <xsl:template match="subdrv">
-  <dt>
+  <div>
     <xsl:if test="@mrk">
       <xsl:attribute name="id">
         <xsl:value-of select="@mrk"/>
@@ -176,14 +178,14 @@ uzata kun XSLT1-transformilo
       ref="<xsl:value-of select="ancestor::drv/@mrk"/><xsl:number format="A"/>"
     ]]</xsl:comment> -->
 
-  </dt>
+  <!-- </dt>
 
-  <dd>
+  <dd> -->
     <xsl:apply-templates select="dif|gra|uzo|fnt|ref[@tip='dif']"/>
 
-    <dl>
+    <div>
       <xsl:apply-templates select="snc"/>
-    </dl>
+    </div>
 
     <xsl:apply-templates
       select="node()[
@@ -196,7 +198,7 @@ uzata kun XSLT1-transformilo
          self::fnt|
          self::dif|
          self::ref[@tip='dif'])]"/>   
-  </dd>
+  </div>
 </xsl:template>
 
 
@@ -239,7 +241,7 @@ uzata kun XSLT1-transformilo
 <xsl:template match="snc">
   <!-- xsl:apply-templates select="tez" mode="ref"/ -->
 
-  <dt>
+  <div>
     <xsl:if test="@mrk">
       <xsl:attribute name="id">
         <xsl:value-of select="@mrk"/>
@@ -274,15 +276,15 @@ uzata kun XSLT1-transformilo
       </xsl:when>
 
     </xsl:choose>
-  </dt>
+  <!-- </dt>
 
-  <dd>
+  <dd> -->
     <xsl:apply-templates select="gra|uzo|fnt|dif|ref[@tip='dif']"/>
 
     <xsl:if test="subsnc">
-      <dl>
+      <!-- <dl> -->
         <xsl:apply-templates select="subsnc"/>
-      </dl>
+      <!-- </dl> -->
     </xsl:if>
 
     <xsl:apply-templates
@@ -296,14 +298,14 @@ uzata kun XSLT1-transformilo
            self::trd|
            self::trdgrp|
            self::ref[@tip='dif'])]"/>
-  </dd>
+  </div>
 </xsl:template>  
 
 
 <xsl:template match="subsnc">
   <!-- xsl:apply-templates select="tez" mode="ref"/ -->
 
-  <dt>
+  <div>
     <xsl:if test="@mrk">
       <xsl:attribute name="id">
         <xsl:value-of select="@mrk"/>
@@ -333,10 +335,10 @@ uzata kun XSLT1-transformilo
       </xsl:otherwise>
 
     </xsl:choose> -->
-  </dt>
-  <dd>
+  <!-- </dt>
+  <dd> -->
   <xsl:apply-templates/>
-  </dd>
+  </div>
 </xsl:template>
 
 <!--

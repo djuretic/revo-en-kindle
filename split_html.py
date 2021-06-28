@@ -4,7 +4,6 @@ HTML_CONTENT_BEFORE = """<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transition
 <html xmlns:idx="www.mobipocket.com" xmlns:mbp="www.mobipocket.com" xmlns:xlink="http://www.w3.org/1999/xlink">
   <head>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <link rel="stylesheet" href="common.css">
   </head>
   <body>
     <mbp:pagebreak/>
@@ -34,7 +33,7 @@ def main():
             if "<h1>" in line:
                 n_entry += 1
                 if n_entry >= ENTRIES_PER_FILE:
-                    print("new file", n_file, n_entry)
+                    print(f'output/content{n_file}.html')
                     write_content_html(n_file, buffer)
                     n_file += 1
                     n_entry = 0

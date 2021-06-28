@@ -63,8 +63,9 @@ montru tie, cxar ili estas esenca parto de tiuj -->
   <xsl:choose>
     <xsl:when test="self::drv">
       <xsl:if test=".//trd[@lng=$lng]|.//trdgrp[@lng=$lng]">
-        <dt lang="eo" class="lng"><xsl:value-of select="$lingvo"/>:</dt>
-        <dd lang="{$lng}">
+        <div>
+        <strong lang="eo" class="lng"><xsl:value-of select="$lingvo"/>:</strong>
+        <span lang="{$lng}">
         <!--
           eta ĝenaĵo: se senco kaj ekzemplo ene havas tradukojn, ili aperas kun cifero de la senco,
           se nur ekzemplo aperas, la cifero mankas.
@@ -83,13 +84,15 @@ montru tie, cxar ili estas esenca parto de tiuj -->
             <xsl:text> </xsl:text>
           </xsl:for-each>
 
-        </dd>
+        </span>
+        </div>
       </xsl:if>
     </xsl:when>
     <xsl:otherwise>
       <xsl:if test="trd[@lng=$lng]|trdgrp[@lng=$lng]|snc/trd[@lng=$lng]|snc/trdgrp[@lng=$lng]">
-        <dt lang="eo" class="lng"><xsl:value-of select="$lingvo"/>:</dt>
-        <dd lang="{$lng}">
+        <div>
+        <strong lang="eo" class="lng"><xsl:value-of select="$lingvo"/>:</strong>
+        <span lang="{$lng}">
         <!--
           eta ĝenaĵo: se senco kaj ekzemplo ene havas tradukojn, ili aperas kun cifero de la senco,
           se nur ekzemplo aperas, la cifero mankas.
@@ -108,7 +111,7 @@ montru tie, cxar ili estas esenca parto de tiuj -->
             <xsl:text> </xsl:text>
           </xsl:for-each>
 
-        </dd>
+        </span></div>
       </xsl:if>
     </xsl:otherwise>
   </xsl:choose>
