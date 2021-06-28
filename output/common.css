@@ -1,0 +1,15 @@
+dl dd {
+  display: inline;
+  margin: 0;
+}
+dl dd:after{
+  display: block;
+  content: '';
+}
+dl dt{
+  display: inline-block;
+  min-width: 1em;
+}
+dl.tradukoj dt {
+  min-width: 6em;
+}
