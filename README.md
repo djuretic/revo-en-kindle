@@ -18,4 +18,10 @@ pip install -r requirements.txt
 
 The .mobi file can be found in the [Releases](https://github.com/djuretic/revo-en-kindle/releases) section.
 
-Then you can upload it or email it to your Kindle.
+Then you can upload it your Kindle (you can use Calibre to do that), and the dictionary will appear in the "Dictionaries" collection of your library.
+
+## Elŝuti
+
+La .mobi dosiero troveblas en [Releases](https://github.com/djuretic/revo-en-kindle/releases).
+
+Alŝuti ĝin al via Kindle (vi povas fari ĝin per Calibre), kaj la vortaro aperos en la "Dictionaries" kolekto de via biblioteko.
