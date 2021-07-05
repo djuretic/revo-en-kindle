@@ -25,3 +25,8 @@ Then you can upload it your Kindle (you can use Calibre to do that), and the dic
 La .mobi dosiero troveblas en [Releases](https://github.com/djuretic/revo-en-kindle/releases).
 
 Alŝuti ĝin al via Kindle (vi povas fari ĝin per Calibre), kaj la vortaro aperos en la "Dictionaries" kolekto de via biblioteko.
+
+## Related projects
+
+* https://github.com/coljac/kindle_eo_eng - Esperanto-English dictionary for Kindle
+* https://bitbucket.org/marko31/konvertado-de-revo/wiki/Home - Reta Vortaro for Kobo devices
